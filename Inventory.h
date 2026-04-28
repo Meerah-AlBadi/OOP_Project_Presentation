@@ -5,5 +5,8 @@ private:
     int quantities[100]; //array stores each products quantity
     int count; //checks the number of products in inventory
 public:
+    Inventory() {
+        count=0
+    }
 
 };
