@@ -7,5 +7,4 @@ private:
 public:
     Inventory();
     void addProduct(Product prdct, int qty);
-
 };
