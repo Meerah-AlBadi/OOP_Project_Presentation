@@ -6,7 +6,8 @@ private:
     int count; //checks the number of products in inventory
 public:
     Inventory() {
-        count=0
+        count=0;
     }
+    void add_product(Product prdct, int qty);
 
 };
