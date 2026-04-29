@@ -6,6 +6,6 @@ private:
     int count; //checks the number of products in inventory
 public:
     Inventory(); //constructor
-    void add_product(Product prdct, int qty); //function
-    int get_ID();
+    void add_product(Product prdct, int qty); //adds product function
+    void reduce_stock(int id,int amount); //reduce stock function
 };
