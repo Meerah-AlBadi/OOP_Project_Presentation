@@ -14,3 +14,16 @@ void Inventory::add_product(Product prdct, int qty) {
         quantities[count]=qty;
         count++;
     }
+void Inventory::reduce_stock(int id,int amount) {
+    for (int i=0;i<count;i++) {
+        if (products[i].get_ID()==id) {
+            if (quantities[i]>=amount){
+                quantities[i]-=amount;
+            }
+            else{
+                cout<<"Not enough stock";
+            }
+            return;
+        }
+    }
+}
