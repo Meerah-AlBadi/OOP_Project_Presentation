@@ -6,7 +6,7 @@ Inventory::Inventory() {
     count=0;
 }
 void Inventory::add_product(Product prdct, int qty) {
-    if (qty<=0) {
+    if (qty<=0) { //exception handling for quantity
         cout<<"Invalid quantity";
         return;
     }
@@ -22,7 +22,7 @@ void Inventory::add_product(Product prdct, int qty) {
     }
 void Inventory::reduce_stock(int id,int amount) {
     if (amount<=0) {
-        cout<<"Purchase amount is invalid";
+        cout<<"Invalid amount"; //exception handling for purchase amount
         return;
     }
     for (int i=0;i<count;i++) {
