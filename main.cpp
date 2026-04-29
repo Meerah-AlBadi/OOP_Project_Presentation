@@ -10,12 +10,20 @@ int main() {
     cin>>id;
     cout<<"Enter quantity:";
     cin>>qty;
+    if (qty<=0) {
+        cout<<"Invalid input";
+        return 0;
+    }
     Product p(id); //temporary until Product class is created
     inventory.add_product(p,qty);
     int amount_purchase;
     cout<<"Enter amount to purchase:";
     cin>>amount_purchase;
+    if (amount_purchase<=0) {
+        cout<<"Invalid input";
+        return 0;
+    }
     inventory.reduce_stock(id,amount_purchase);
     inventory.display_inventory();
-    return 0
+    return 0;
 }
