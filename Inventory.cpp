@@ -6,6 +6,10 @@ Inventory::Inventory() {
     count=0;
 }
 void Inventory::add_product(Product prdct, int qty) {
+    if (qty<=0) {
+        cout<<"Invalid quantity";
+        return;
+    }
     for (int i=0;i<count;i++) {
         if (products[i].get_ID()==prdct.get_ID()) {
             quantities[i]+=qty;
@@ -17,6 +21,10 @@ void Inventory::add_product(Product prdct, int qty) {
         count++;
     }
 void Inventory::reduce_stock(int id,int amount) {
+    if (amount<=0) {
+        cout<<"Purchase amount is invalid";
+        return;
+    }
     for (int i=0;i<count;i++) {
         if (products[i].get_ID()==id) {
             if (quantities[i]>=amount){
@@ -28,6 +36,7 @@ void Inventory::reduce_stock(int id,int amount) {
             return;
         }
     }
+    cout<<"Product is not found";
 }
 void Inventory::display_inventory() {
     for (int i=0; i<count;i++) {
