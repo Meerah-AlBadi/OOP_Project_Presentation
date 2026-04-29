@@ -1,4 +1,5 @@
 //Inventory class
+#include "Product.h"
 class Inventory {
 private:
     Product products[100]; //stores all products in inventory
