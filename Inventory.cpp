@@ -29,3 +29,8 @@ void Inventory::reduce_stock(int id,int amount) {
         }
     }
 }
+void Inventory::display_inventory() {
+    for (int i=0; i<count;i++) {
+        cout<<products[i].get_ID()<<" "<<quantities[i]<<endl;
+    }
+}
