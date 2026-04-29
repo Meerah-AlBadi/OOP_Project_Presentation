@@ -7,4 +7,5 @@ private:
 public:
     Inventory(); //constructor
     void add_product(Product prdct, int qty); //function
+    int get_ID();
 };
