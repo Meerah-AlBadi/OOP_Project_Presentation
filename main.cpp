@@ -26,7 +26,7 @@ int main() {
         cout<<"Invalid purchase amount";
         return 0;
     }
-    inventory.reduce_stock(id,amount_purchase)
+    inventory.reduce_stock(id,amount_purchase);
     inventory.display_inventory();
     return 0;
 }
