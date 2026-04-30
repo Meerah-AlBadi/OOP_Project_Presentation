@@ -11,4 +11,5 @@ public:
     int getProductID();   //returns Product id
     string getProductName();   // returns Product Name
     void setPrice(double p);   // set the price of the product
+    void displayProductinfo();  // prints product information (id,name,price)
 };
