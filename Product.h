@@ -1,3 +1,5 @@
+#include <string>
+using namespace std;
 // Product class (.h)
 class Product {
     int ProductID;
@@ -10,4 +12,3 @@ public:
     string getProductName();   // returns Product Name
     void setPrice(double p);   // set the price of the product
 };
-
