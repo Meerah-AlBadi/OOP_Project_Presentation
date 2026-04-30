@@ -1,3 +1,5 @@
+#ifndef PRODUCT_H
+#define PRODUCT_H
 #include <string>
 using namespace std;
 // Product class (.h)
@@ -11,5 +13,7 @@ public:
     int getProductID();   //returns Product id
     string getProductName();   // returns Product Name
     void setPrice(double p);   // set the price of the product
-    void displayProductinfo();  // prints product information (id,name,price)
+    void displayProduct_info();  // prints product information (id,name,price)
 };
+
+#endif
