@@ -1,5 +1,9 @@
 #include "Admin.h"
 
+#include <iostream>
+#include <string>
+using namespace std;
+
 Admin::Admin() : User(){
     inventory = nullptr;}
 
