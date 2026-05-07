@@ -1,4 +1,7 @@
 //Inventory class
+#ifndef INVENTORY_H
+#define INVENTORY_H
+
 #include "Product.h"
 class Inventory {
 private:
@@ -11,3 +14,5 @@ public:
     void reduce_stock(int id,int amount); //reduce stock function
     void display_inventory(); //displays inventory funtion
 };
+
+#endif
