@@ -6,7 +6,7 @@ User::User() {  //initialized constructor
     id =0;
     name="";
 }
-User::User (int i, string n) { //paramenterized constructor
+User::User (int i, string n) { //parameterized  constructor
     id = i;
     name = n;
 }
