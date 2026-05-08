@@ -15,7 +15,7 @@ class Admin: public User {   // Admin class is inherited from class User
         Inventory* inventory;   //Pointer to inventory object
 public:
     Admin();  // Initializer Constructor
-    Admin (int id, string name, Inventory* inv);  //Paramentarized Constructor
+    Admin (int id, string name, Inventory* inv);  //parameterized  Constructor
 
     void Add_Product();  // Add product to inventory
 
