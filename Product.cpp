@@ -8,7 +8,7 @@ Product::Product() {    //Initializer Constructor
     Product_Name="";
     Price =0;
 }
-Product::Product(int id,string name,double p): ProductID(id),Product_Name(name),Price(p) {}//Paramenterized Constructor
+Product::Product(int id,string name,double p): ProductID(id),Product_Name(name),Price(p) {}//parameterized  Constructor
 
 
 int Product::getProductID() {return ProductID;}   //returns Product id
