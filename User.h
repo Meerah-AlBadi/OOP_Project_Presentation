@@ -10,7 +10,7 @@ protected:
     string name;  //user name
     public:
     User() ;// initialized  constructor
-    User(int i, string n) ; //paramenterized constructor
+    User(int i, string n) ; //parameterized  constructor
     int getId() ;// return user id
     string getName() ; // return user name
     void display() ; // display user info
