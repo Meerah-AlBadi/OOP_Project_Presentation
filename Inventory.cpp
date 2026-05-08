@@ -3,7 +3,7 @@
 using namespace std;
 
 Inventory::Inventory() {
-    count=0;
+    size=0;
 }
 void Inventory::add_product(Product prdct, int qty) {
     if (qty<=0) { //exception handling for quantity
@@ -16,16 +16,16 @@ void Inventory::add_product(Product prdct, int qty) {
             return;
         }
     }
-        products[count]=prdct;
-        quantities[count]=qty;
-        count++;
+        products[size]=prdct;
+        quantities[size]=qty;
+        size++;
     }
 void Inventory::reduce_stock(int id,int amount) {
     if (amount<=0) {
         cout<<"Invalid amount"; //exception handling for purchase amount
         return;
     }
-    for (int i=0;i<count;i++) {
+    for (int i=0;i<size;i++) {
         if (products[i].get_ID()==id) {
             if (quantities[i]>=amount){
                 quantities[i]-=amount;
@@ -40,6 +40,6 @@ void Inventory::reduce_stock(int id,int amount) {
 }
 void Inventory::display_inventory() {
     for (int i=0; i<count;i++) {
-        cout<<products[i].get_ID()<<" "<<quantities[i]<<endl;
+        cout<<products[i].getProductID()<<" "<<quantities[i]<<endl;
     }
 }
