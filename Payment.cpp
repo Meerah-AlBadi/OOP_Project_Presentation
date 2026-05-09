@@ -3,7 +3,7 @@
 using namespace std;
 Payment::Payment(){
   idPayment=0;
-  methodPayment="idk";
+  methodPayment="";
   amount=0;
 }
 Payment::Payment(int id, string method, double a)
