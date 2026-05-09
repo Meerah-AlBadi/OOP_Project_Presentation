@@ -11,6 +11,5 @@ public:
 Payment();
 Payment(int id, string method, double a);
 void displayPayment();
-void processPayment();
 };
 #endif
