@@ -7,7 +7,7 @@ Customer::Customer(): User(){}  // call default constructor of user class
 Customer::Customer(int id, string name):User(id, name){}
 // parameterized  constructor it sends id and name to user contsructor
 
-Customer :: gerCusName() {
+Customer :: getCusName() {
         return name;
 }
 void Customer::displayCustomer() { // function to display customer information
