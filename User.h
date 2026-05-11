@@ -11,7 +11,7 @@ protected:
 public:
     User() ;// initialized  constructor
     User(int i, string n) ; //parameterized  constructor
-    int getId() ;// return user id
+    int getID() ;// return user id
     string getName() ; // return user name
     void display() ; // display user info
 };
