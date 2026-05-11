@@ -13,6 +13,6 @@ public:
     User(int i, string n) ; //parameterized  constructor
     int getID() ;// return user id
     string getName() ; // return user name
-    void display() ; // display user info
+    void displayUser() ; // display user info
 };
 #endif
