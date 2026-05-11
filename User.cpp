@@ -16,7 +16,7 @@ int User::getID() { // return user id
 string User::getName() {  // return user name
     return name;
 }
-void User::display() {  // display user info
+void User::displayUser() {  // display user info
     cout<<"id = "<<id<<endl;
     cout<<"name = "<<name<<endl;
 }
