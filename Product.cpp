@@ -21,6 +21,10 @@ void Product::setPrice(double p) {   // set the price of the product
     }
 }
 
+double Product::getPrice() {
+        return Price;
+}
+
 void Product::displayProduct_info() {  // print Product information
     cout <<"Product ID: "<<getProductID() <<endl;
     cout << "Product Name: "<< getProductName() <<endl;
