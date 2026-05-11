@@ -10,7 +10,7 @@ User::User (int i, string n) { //parameterized  constructor
     id = i;
     name = n;
 }
-int User::getId() { // return user id
+int User::getID() { // return user id
     return id;
 }
 string User::getName() {  // return user name
