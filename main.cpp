@@ -1,4 +1,3 @@
-
 // ----------------------MAIN--------------------------
  #include <iostream>
 #include <string>
@@ -22,12 +21,14 @@
          cout <<  "Enter Your Chosen Option: ";
          cin >> option;
 
-         if (cin.fail()) {        // Checks if input failed
-             cin.clear();        //  Removes the error state so cin works again
-             cin.ignore(1000,'\n');    // Deletes the wrong input from memory
-             cout << "Invalid input!!" << endl << "Please enter a number." << endl;  // Display an error message
-             continue;
-         }
+         // Erorr Handeling: 
+         // if (cin.fail()) {        // Checks if input failed
+         //     cin.clear();        //  Removes the error state so cin works again
+         //     cin.ignore(1000,'\n');    // Deletes the wrong input from memory
+         //     cout << "Invalid input!!" << endl << "Please enter a number." << endl;  // Display an error message
+         //     continue;
+         // }
+      
          switch (option) {
              case 1: {
                  int AdminID;
@@ -98,7 +99,6 @@
                  cout << "Enter Customer Name: ";
                  cin.ignore();
                  getline(cin,Customer_Name);
-                 cin >> Customer_Name;
 
                  Customer customer(CustomerID, Customer_Name);
                  cout << "--- Customer Information ---" << endl;
@@ -109,6 +109,8 @@
                  cout << "Enter Order ID: ";
                  cin >> orderID;
 
+				             inventory.display_inventory();
+
                  cout << "Enter Product ID: ";
                  cin >> productID;
 
@@ -117,29 +119,45 @@
 
                  Product* SelectedProduct = inventory.findProduct(productID);
 
-                 inventory.reduce_stock(productID, quantity);
-
-                 Order order(orderID, customer, SelectedProduct,quantity);
-                 order.displayOrder();
+                 if(SelectedProduct == nullptr) {
+ 					                     cout << "Product Not Found!" << endl;
+					                      break;
+				             }
 
                  string PaymentMethod;
 
-                 cout << "Enter Payment Method: ";
-                 cin  >> PaymentMethod;
+                 int PaymentID;
 
-                 Payment payment(order.getProductID(), order.getProdutID(), order.getQuantity());
+                 cout << "Enter Payment ID: ";
+                 cin >> PaymentID;
+
+                 cout << "Enter Payment Method: ";
+                 cin.ignore();
+                 getline(cin,PaymentMethod);
+
+				             double total = SelectedProduct-> getPrice() *quantity;
+
+                 Payment payment(PaymentID, PaymentMethod,total);
+
+				             Order order(orderID, &customer, SelectedProduct,quantity, payment);
+                 order.displayOrder();
+
+				             inventory.reduce_stock(productID, quantity);
 
                  cout << "Order Completed! Inventory updated successfully" <<endl;
                  break;
              }
+          
              case 0: {
                  cout << "System Closed!" << endl;
                  break;
              }
-             default:
+          
+             default:   // if input != 1,2,3,0 then this runs and print an error message
                  cout << "Invalid option!! Try Again" << endl;
 
          }
-         return 0;
+
      }
+     return 0;
  }
