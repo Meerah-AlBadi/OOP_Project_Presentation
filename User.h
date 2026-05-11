@@ -8,7 +8,7 @@ class User {
 protected:
     int id;        // user id
     string name;  //user name
-    public:
+public:
     User() ;// initialized  constructor
     User(int i, string n) ; //parameterized  constructor
     int getId() ;// return user id
