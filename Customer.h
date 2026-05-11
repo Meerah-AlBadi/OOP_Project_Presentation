@@ -8,7 +8,7 @@ public:
     Customer(); // defualt constructor
 
     Customer(int id, string name);//parametrized constructor
-    string gerCusName();    // return Customer name
+    string getCusName();    // return Customer name
     void displayCustomer(); //display  customer details
 };
 #endif
