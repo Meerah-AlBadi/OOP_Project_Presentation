@@ -4,8 +4,6 @@
 using namespace std;
 // customer class inherits from parent class(user class)
 class Customer: public User {
-    int CustomerID;
-    string CustomerName;;
 public:
     Customer(); // defualt constructor
 
