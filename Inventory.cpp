@@ -40,7 +40,7 @@ void Inventory::reduce_stock(int id,int amount) { //function to reduce product a
 }
 void Inventory::display_inventory() { //function to display all stored products and quantites
     for (int i=0; i<size;i++) {
-        cout<<products[i].getProductID()<<" "<<quantities[i]<<endl;
+        cout<<products[i].getProductName()<<" "<<products[i].getProductID()<<" "<<quantities[i]<<endl;
     }
 }
 // Function to findProduct
