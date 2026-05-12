@@ -28,7 +28,7 @@ void Admin::Add_Product() {
     cin >> quantity;
 
     Product product(ProductID,ProductName,price);
-    inventory->addProduct(product,quantity);
+    inventory->add_product(product,quantity);
 }
 
 void Admin::View_Inventory() {
