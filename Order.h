@@ -12,10 +12,10 @@ Customer* customer;
 Product* product;
 Payment payment;
 int quantity;
-int total;
+double total;
 public:
 Order();   // Initializer Constructor
-Order(int id, Customer* c, Product* p, int quan, Payment pay);    //Parameterized Counstructor
+Order(int id, Customer* c, Product* p, int quan, Payment pay, double t);    //Parameterized Counstructor
 void displayOrder();    // Print Order details
 };
 #endif
