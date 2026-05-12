@@ -54,6 +54,7 @@
                      cout << "2.Remove Product" << endl;
                      cout << "3.View Inventory"<< endl;
                      cout << "4.Update Product Stock" <<endl;
+					 cout << "5. Update Product Price" << endl;
                      cout << "0.Back" << endl;
                      cout << "Enter Your Chosen Option: ";
                      cin >> Admin_Option;
@@ -79,6 +80,9 @@
                          case 4:
                              admin.Update_Product_Stock();
                              break;
+						 case 5:
+    						 admin.Update_Product_Price();
+    						 break;
                          case 0:
                              cout << "Returning to main menu"<<endl;
                              break;
