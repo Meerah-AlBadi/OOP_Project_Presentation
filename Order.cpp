@@ -12,11 +12,12 @@ total =0;
 Order:: Order(int id, Customer* c, Product* p, int quan, Payment pay, double t): OrderID(id), customer(c), product(p), quantity(quan),payment(pay), total(t) {}
 
 void Order:: displayOrder() {
-cout << "==== Order details ====" << endl;
-cout << "Order ID: "<< OrderID << endl;
-cout << "Customer Name: " << customer ->getName() << endl;
-cout << "Product Name: " << product -> getProductName() << endl;
-cout << "Quantity of bought product : " << quantity << endl;
-cout << "Total " << total << " OMR "<<endl;
-payment.displayPayment(); //Prints Payment Details of the order
+  cout << endl;
+  cout << "==== Order details ====" << endl;
+  cout << "Order ID: "<< OrderID << endl;
+  cout << "Customer Name: " << customer ->getName() << endl;
+  cout << "Product Name: " << product -> getProductName() << endl;
+  cout << "Quantity of bought product : " << quantity << endl;
+  cout << "Total " << total << " OMR "<<endl;
+  payment.displayPayment(); //Prints Payment Details of the order
 }
