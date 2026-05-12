@@ -113,8 +113,6 @@
                  cout << "Enter Order ID: ";
                  cin >> orderID;
 
-				             inventory.display_inventory();
-
                  cout << "Enter Product ID: ";
                  cin >> productID;
 
