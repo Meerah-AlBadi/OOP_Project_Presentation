@@ -10,8 +10,8 @@ void Inventory::add_product(Product prdct, int qty) {
         cout<<"Invalid quantity";
         return;
     }
-    for (int i=0;i<count;i++) {
-        if (products[i].get_ID()==prdct.get_ID()) {
+    for (int i=0;i<size;i++) {
+        if (products[i].getProductID()==prdct.getProductID()) {
             quantities[i]+=qty;
             return;
         }
@@ -26,7 +26,7 @@ void Inventory::reduce_stock(int id,int amount) {
         return;
     }
     for (int i=0;i<size;i++) {
-        if (products[i].get_ID()==id) {
+        if (products[i].getProductID()==id) {
             if (quantities[i]>=amount){
                 quantities[i]-=amount;
             }
@@ -39,15 +39,15 @@ void Inventory::reduce_stock(int id,int amount) {
     cout<<"Product is not found";
 }
 void Inventory::display_inventory() {
-    for (int i=0; i<count;i++) {
+    for (int i=0; i<size;i++) {
         cout<<products[i].getProductID()<<" "<<quantities[i]<<endl;
     }
 }
 // Function to findProduct
 Product* Inventory::findProduct (int ProductID) {
     for (int i=0; i<size ;i++) {
-        if (Product[i].getProductID() == ProductID) {
-            return &Product[i];
+        if (products[i].getProductID() == ProductID) {
+            return &products[i];
         }
     }
 
@@ -61,7 +61,7 @@ bool Inventory::updateStock(int productID, int newQuantity) {
         return false;
     }
     for (int i=0; i<size ; i++) {
-        if (products[i].getProductId() == productID) {
+        if (products[i].getProductID() == productID) {
             quantities[i] = newQuantity;
             cout<<"Stock updates successfully"<<endl;
             return true;
@@ -74,7 +74,7 @@ bool Inventory::updateStock(int productID, int newQuantity) {
 // Remove a product
 bool Inventory::removeProduct(int productID) {
     for (int i=0; i<size ; i++) {
-        if (product[i].getProductID()== productID) {
+        if (products[i].getProductID()== productID) {
             for (int j=i;j<size-1 ; j++) {
                 products[j]= products[j+1];
                 quantities[j]=quantities[j+1];
