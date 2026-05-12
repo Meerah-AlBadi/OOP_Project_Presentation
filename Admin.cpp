@@ -53,3 +53,30 @@ void Admin::Remove_Product() {
 
     inventory -> removeProduct(ProductID);
 }
+
+void Admin::Update_Product_Price() {
+    int productID;
+    double newPrice;
+
+    cout << "Enter Product ID: ";
+    cin >> productID;
+
+    Product* product = inventory->findProduct(productID);
+
+    if (product == nullptr) {
+        cout << "Product not found!" << endl;
+        return;
+    }
+
+    cout << "Enter new price: ";
+    cin >> newPrice;
+
+    if (newPrice < 0) {
+        cout << "Invalid price!" << endl;
+        return;
+    }
+
+    product->setPrice(newPrice);
+
+    cout << "Price updated successfully!" << endl;
+}
