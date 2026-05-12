@@ -43,6 +43,8 @@ void Admin::Update_Product_Stock() {
 
     cout << "Enter quantity:";
     cin >> quantity;
+    
+    inventory -> updateStock(ProductID,quantity);
 }
 
 void Admin::Remove_Product() {
