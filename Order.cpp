@@ -1,33 +1,20 @@
-#include<iostream>
+#indef ORDER_H
+#define ORDER_H
+#include <iostream>
+#include "customer.h"
+#include "product.h"
 using namespace std;
-class Order{
-private:
-  int quantity;
-  string name;
-  Payment payment; //composition 
 
+class Order {
+int OrderID;
+Customer* customer;
+Product* product;
+Payment payment;
+int quantity;
+int total;
 public:
-  void input(){
-    cout<<"enter name of product: ";
-    cin>>name;
-    cout<<"enter quantity: ";
-    cin>>quantity;
-
-    payment.inputPayment();
-  }
-
-void display(){
-  cout<<"product: "<<name<<endl;
-  cout<<"quantity: "<<quantity<<endl;
-
-  payment.displayPayment();
-}
-
+Order();   // Initializer Constructor
+Order(int id, Customer* c, Product* p, int quan, Payment pay);   //Parameterized Counstructor
+void displayOrder();     // Print Order details
 };
-
-int main(){
-  Order n;
-  n.input();
-  n.display();
-  return 0;
-}
+#endif
