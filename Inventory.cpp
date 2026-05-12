@@ -11,7 +11,7 @@ void Inventory::add_product(Product prdct, int qty) { //function to add product/
         return;
     }
     for (int i=0;i<size;i++) {
-        if (products[i].getProductID()==prdct.getProductID(){
+        if (products[i].getProductID()==prdct.getProductID()){
             quantities[i]+=qty;
             return;
         }
