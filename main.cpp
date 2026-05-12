@@ -14,6 +14,7 @@
      Inventory inventory; // Inventory object
      int option=-1;
      while (option !=0) {
+		 cout << endl;
          cout << "==== Gaming Store Management System ===="<<endl;
          cout << "1. Admin" << endl;
          cout << "2. Customer" << endl;
