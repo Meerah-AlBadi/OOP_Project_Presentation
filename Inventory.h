@@ -13,6 +13,9 @@ public:
     void add_product(Product prdct, int qty); //adds product function
     void reduce_stock(int id,int amount); //reduce stock function
     void display_inventory(); //displays inventory funtion
+    Product* findProduct(int ProductID); //find product declaration
+	bool updateStock(int productID, int newQuantity); //update stock declaration
+	bool removeProduct(int productID); //remove product declaration
 };
 
 #endif
