@@ -1,20 +1,22 @@
-#indef ORDER_H
-#define ORDER_H
 #include <iostream>
-#include "customer.h"
-#include "product.h"
+#include "Order.h"
 using namespace std;
+Order:: Order() {
+OrderID =0;
+customer = nullptr;
+product = nullptr;
+quantity =0;
+total =0;
+}
 
-class Order {
-int OrderID;
-Customer* customer;
-Product* product;
-Payment payment;
-int quantity;
-int total;
-public:
-Order();   // Initializer Constructor
-Order(int id, Customer* c, Product* p, int quan, Payment pay);   //Parameterized Counstructor
-void displayOrder();     // Print Order details
-};
-#endif
+Order:: Order(int id, Customer* c, Product* p, int quan, Payment pay): OrderID(id), customer(c), product(p), quantity(quan),payment(pay) {}
+
+void Order:: displayOrder() {
+cout << "==== Order details ====" << endl;
+cout << "Order ID: "<< OrderID << endl;
+cout << "Customer Name: " << customer ->getName() << endl;
+cout << "Product Name: " << product -> getProductName() << endl;
+cout << "Quantity of bought product : " << quantity << endl;
+cout << "Total " << total << "OMR "<<endl;
+payment.displayPayment(); //Prints Payment Details of the order
+}
