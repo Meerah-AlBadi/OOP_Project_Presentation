@@ -2,25 +2,25 @@
 #include <iostream>
 using namespace std;
 
-Inventory::Inventory() {
-    size=0;
+Inventory::Inventory() { //constructor
+    size=0; 
 }
-void Inventory::add_product(Product prdct, int qty) {
+void Inventory::add_product(Product prdct, int qty) { //function to add product/update quantity
     if (qty<=0) { //exception handling for quantity
         cout<<"Invalid quantity";
         return;
     }
     for (int i=0;i<size;i++) {
-        if (products[i].getProductID()==prdct.getProductID()) {
+        if (products[i].getProductID()==prdct.getProductID(){
             quantities[i]+=qty;
             return;
         }
     }
-        products[size]=prdct;
+        products[size]=prdct; 
         quantities[size]=qty;
         size++;
     }
-void Inventory::reduce_stock(int id,int amount) {
+void Inventory::reduce_stock(int id,int amount) { //function to reduce product after stock purchase
     if (amount<=0) {
         cout<<"Invalid amount"; //exception handling for purchase amount
         return;
@@ -36,22 +36,22 @@ void Inventory::reduce_stock(int id,int amount) {
             return;
         }
     }
-    cout<<"Product is not found";
+    cout<<"Product is not found"; //if there is not matching prdct
 }
-void Inventory::display_inventory() {
+void Inventory::display_inventory() { //function to display all stored products and quantites
     for (int i=0; i<size;i++) {
         cout<<products[i].getProductID()<<" "<<quantities[i]<<endl;
     }
 }
 // Function to findProduct
-Product* Inventory::findProduct (int ProductID) {
+Product* Inventory::findProduct (int ProductID) { 
     for (int i=0; i<size ;i++) {
         if (products[i].getProductID() == ProductID) {
             return &products[i];
         }
     }
 
-    return nullptr;
+    return nullptr; //if no matching product
 }
 
 // Function to update Stock of a product
