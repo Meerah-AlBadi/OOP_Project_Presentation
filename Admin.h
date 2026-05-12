@@ -24,6 +24,7 @@ public:
     void Update_Product_Stock();   //update a product stock in inventory
 
     void Remove_Product();    // remove a product from the inventory
+    void Update_Product_Price();
 };
 
 #endif
