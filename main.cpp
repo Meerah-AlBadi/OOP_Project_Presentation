@@ -141,7 +141,7 @@
 
                  Payment payment(PaymentID, PaymentMethod,total);
 
-				             Order order(orderID, &customer, SelectedProduct,quantity, payment);
+				             Order order(orderID, &customer, SelectedProduct,quantity, payment, total);
                  order.displayOrder();
 
 				             inventory.reduce_stock(productID, quantity);
