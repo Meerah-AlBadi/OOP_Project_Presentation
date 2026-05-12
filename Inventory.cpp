@@ -39,6 +39,8 @@ void Inventory::reduce_stock(int id,int amount) { //function to reduce product a
     cout<<"Product is not found"; //if there is not matching prdct
 }
 void Inventory::display_inventory() { //function to display all stored products and quantites
+    cout << endl;
+    cout << "==== Inventory ====" << endl;
     for (int i=0; i<size;i++) {
         cout<<products[i].getProductName()<<" "<<products[i].getProductID()<<" "<<quantities[i]<<endl;
     }
