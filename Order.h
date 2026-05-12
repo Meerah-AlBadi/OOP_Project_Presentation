@@ -3,6 +3,7 @@
 #include <iostream>
 #include "customer.h"
 #include "product.h"
+#include "Payment.h"
 using namespace std;
 
 class Order {
