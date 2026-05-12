@@ -58,12 +58,12 @@
                      cout << "Enter Your Chosen Option: ";
                      cin >> Admin_Option;
 
-                     if (cin.fail()) {
-                         cin.clear();
-                         cin.ignore(1000,'\n');
-                         cout << "Invalid input!! Please enter a number.";
-                         continue;
-                     }
+                     // if (cin.fail()) {
+                     //     cin.clear();
+                     //     cin.ignore(1000,'\n');
+                     //     cout << "Invalid input!! Please enter a number.";
+                     //     continue;
+                     // }
 
                      switch (Admin_Option) {
                          case 1: {
