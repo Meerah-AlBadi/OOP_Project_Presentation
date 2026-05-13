@@ -3,7 +3,6 @@
 using namespace std;
 
 Inventory::Inventory() { //constructor
-    size=0; 
 }
 void Inventory::add_product(Product prdct, int qty) { //function to add product/update quantity
     if (qty<=0) { //exception handling for quantity
