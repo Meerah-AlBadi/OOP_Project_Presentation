@@ -20,7 +20,7 @@ void Inventory::add_product(Product prdct, int qty) { //function to add product/
     }
 void Inventory::reduce_stock(int id,int amount) { //function to reduce product after stock purchase
     if (amount<=0) {
-        cout<<"Invalid amount"; //exception handling for purchase amount
+        cout<<"Invalid purchase amount"; //exception handling for purchase amount
         return;
     }
     for (size_t i=0;i<products.size();i++) {
@@ -67,7 +67,7 @@ bool Inventory::updateStock(int productID, int newQuantity) {
             return true;
         }
     }
-    cout<<"product not found"<<endl;
+    cout<<"Product not found"<<endl;
     return false;
 }
 
@@ -78,11 +78,11 @@ bool Inventory::removeProduct(int productID) {
             products.erase(products.begin()+i);
             quantities.erase(quantities.begin()+i);
             
-            cout<<"product removed successfully"<<endl;
+            cout<<"Product removed successfully"<<endl;
             return true;
         }
     }
-    cout<<"product not found"<<endl;
+    cout<<"Product not found"<<endl;
     return false;
 }
 
