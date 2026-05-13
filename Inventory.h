@@ -4,6 +4,9 @@
 
 #include "Product.h"
 #include <vector>
+
+using namespace std;
+
 class Inventory {
 private:
     vector<Product> products; //stores all products in inventory
