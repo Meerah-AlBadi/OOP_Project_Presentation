@@ -2,7 +2,8 @@
 #include <iostream>
 using namespace std;
 
-Inventory::Inventory() { //constructor
+Inventory::Inventory() {
+} //constructor
 Inventory::~Inventory() { //destructor
     cout<<"Inventory destroyed"<<endl;
 }
