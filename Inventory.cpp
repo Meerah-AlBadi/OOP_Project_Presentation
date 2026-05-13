@@ -10,7 +10,7 @@ void Inventory::add_product(Product prdct, int qty) { //function to add product/
         return;
     }
     for (size_t i = 0; i < products.size(); i++) {
-        if (products[i].getProductID()==prdct.getProductID()){
+        if (products[i].getProductID() == prdct.getProductID()){
             quantities[i] += qty;
             return;
         }
@@ -43,7 +43,7 @@ void Inventory::reduce_stock(int id, int amount) { // function to reduce product
 void Inventory::display_inventory() { //function to display all stored products and quantites
     cout << endl;
     cout << "==== Inventory ====" << endl;
-    for (size_t i=0; i<products.size();i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         cout<<products[i].getProductName()<<" "<<products[i].getProductID()<<" "<<quantities[i]<<endl;
     }
 }
