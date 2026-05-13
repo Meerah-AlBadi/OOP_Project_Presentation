@@ -5,13 +5,13 @@ using namespace std;
 Inventory::Inventory() { //constructor
 }
 void Inventory::add_product(Product prdct, int qty) { //function to add product/update quantity
-    if (qty<=0) { //exception handling for quantity
+    if (qty <= 0) { //exception handling for quantity
         cout<<"Invalid quantity";
         return;
     }
-    for (size_t i=0;i<products.size();i++) {
+    for (size_t i = 0; i < products.size(); i++) {
         if (products[i].getProductID()==prdct.getProductID()){
-            quantities[i]+=qty;
+            quantities[i] += qty;
             return;
         }
     }
@@ -19,14 +19,14 @@ void Inventory::add_product(Product prdct, int qty) { //function to add product/
         quantities.push_back(qty);
     }
 void Inventory::reduce_stock(int id,int amount) { //function to reduce product after stock purchase
-    if (amount<=0) {
+    if (amount <= 0) {
         cout<<"Invalid purchase amount"; //exception handling for purchase amount
         return;
     }
-    for (size_t i=0;i<products.size();i++) {
-        if (products[i].getProductID()==id) {
-            if (quantities[i]>=amount){
-                quantities[i]-=amount;
+    for (size_t i = 0;i < products.size(); i++) {
+        if (products[i].getProductID() == id) {
+            if (quantities[i] >= amount){
+                quantities[i] -= amount;
             }
             else{
                 cout<<"Not enough stock";
@@ -45,7 +45,7 @@ void Inventory::display_inventory() { //function to display all stored products 
 }
 // Function to findProduct
 Product* Inventory::findProduct (int ProductID) { 
-    for (size_t i=0; i<products.size() ;i++) {
+    for (size_t i = 0; i < products.size() ; i++) {
         if (products[i].getProductID() == ProductID) {
             return &products[i];
         }
@@ -60,7 +60,7 @@ bool Inventory::updateStock(int productID, int newQuantity) {
         cout<<"Invalid stock quantity"<<endl;
         return false;
     }
-    for (size_t i=0; i<products.size() ; i++) {
+    for (size_t i = 0; i < products.size() ; i++) {
         if (products[i].getProductID() == productID) {
             quantities[i] = newQuantity;
             cout<<"Stock updated successfully"<<endl;
@@ -73,8 +73,8 @@ bool Inventory::updateStock(int productID, int newQuantity) {
 
 // Remove a product
 bool Inventory::removeProduct(int productID) {
-    for (size_t i=0; i<products.size() ; i++) {
-        if (products[i].getProductID()== productID) {
+    for (size_t i = 0; i < products.size() ; i++) {
+        if (products[i].getProductID() == productID) {
             products.erase(products.begin()+i);
             quantities.erase(quantities.begin()+i);
             
