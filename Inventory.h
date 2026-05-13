@@ -8,7 +8,6 @@ class Inventory {
 private:
     vector<Product> products; //stores all products in inventory
 	vector<int> quantities; //stores each products quantity
-    int size; //checks the number of products in inventory
 public:
     Inventory(); //constructor
     void add_product(Product prdct, int qty); //adds product function
