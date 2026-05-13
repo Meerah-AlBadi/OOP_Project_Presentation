@@ -5,8 +5,8 @@
 #include "Product.h"
 class Inventory {
 private:
-    Product products[100]; //stores all products in inventory
-    int quantities[100]; //stores each products quantity
+    vector<Product> products; //stores all products in inventory
+	vector<int> quantities; //stores each products quantity
     int size; //checks the number of products in inventory
 public:
     Inventory(); //constructor
