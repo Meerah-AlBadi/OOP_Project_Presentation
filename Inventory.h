@@ -13,6 +13,7 @@ private:
 	vector<int> quantities; //stores each products quantity
 public:
     Inventory(); //constructor
+	~Inventory(); //destructor
     void add_product(Product prdct, int qty); //adds product function
     void reduce_stock(int id,int amount); //reduce stock function
     void display_inventory(); //displays inventory funtion
