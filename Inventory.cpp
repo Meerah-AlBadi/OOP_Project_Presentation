@@ -63,7 +63,7 @@ bool Inventory::updateStock(int productID, int newQuantity) {
     for (int i=0; i<products.size() ; i++) {
         if (products[i].getProductID() == productID) {
             quantities[i] = newQuantity;
-            cout<<"Stock updates successfully"<<endl;
+            cout<<"Stock updated successfully"<<endl;
             return true;
         }
     }
@@ -77,7 +77,7 @@ bool Inventory::removeProduct(int productID) {
         if (products[i].getProductID()== productID) {
             products.erase(products.begin()+i);
             quantities.erase(quantities.begin()+i);
-            }
+            
             cout<<"product removed successfully"<<endl;
             return true;
         }
