@@ -3,7 +3,10 @@
 using namespace std;
 
 Inventory::Inventory() { //constructor
+Inventory::~Inventory() { //destructor
+    cout<<"Inventory destroyed"<<endl;
 }
+
 void Inventory::add_product(Product prdct, int qty) { //function to add product/update quantity
     if (qty <= 0) { //exception handling for quantity
         cout<<"Invalid quantity";
