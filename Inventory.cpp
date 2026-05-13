@@ -15,9 +15,8 @@ void Inventory::add_product(Product prdct, int qty) { //function to add product/
             return;
         }
     }
-        products[products.size()]=prdct; 
-        quantities[size]=qty;
-        size++;
+        products.push_back(prdct); 
+        quantities.push_back(qty);
     }
 void Inventory::reduce_stock(int id,int amount) { //function to reduce product after stock purchase
     if (amount<=0) {
