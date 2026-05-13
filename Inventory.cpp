@@ -10,13 +10,13 @@ void Inventory::add_product(Product prdct, int qty) { //function to add product/
         cout<<"Invalid quantity";
         return;
     }
-    for (int i=0;i<size;i++) {
+    for (int i=0;i<products.size();i++) {
         if (products[i].getProductID()==prdct.getProductID()){
             quantities[i]+=qty;
             return;
         }
     }
-        products[size]=prdct; 
+        products[products.size()]=prdct; 
         quantities[size]=qty;
         size++;
     }
@@ -25,7 +25,7 @@ void Inventory::reduce_stock(int id,int amount) { //function to reduce product a
         cout<<"Invalid amount"; //exception handling for purchase amount
         return;
     }
-    for (int i=0;i<size;i++) {
+    for (int i=0;i<products.size();i++) {
         if (products[i].getProductID()==id) {
             if (quantities[i]>=amount){
                 quantities[i]-=amount;
@@ -41,13 +41,13 @@ void Inventory::reduce_stock(int id,int amount) { //function to reduce product a
 void Inventory::display_inventory() { //function to display all stored products and quantites
     cout << endl;
     cout << "==== Inventory ====" << endl;
-    for (int i=0; i<size;i++) {
+    for (int i=0; i<products.size();i++) {
         cout<<products[i].getProductName()<<" "<<products[i].getProductID()<<" "<<quantities[i]<<endl;
     }
 }
 // Function to findProduct
 Product* Inventory::findProduct (int ProductID) { 
-    for (int i=0; i<size ;i++) {
+    for (int i=0; i<products.size() ;i++) {
         if (products[i].getProductID() == ProductID) {
             return &products[i];
         }
@@ -62,7 +62,7 @@ bool Inventory::updateStock(int productID, int newQuantity) {
         cout<<"Invalid stock quantity"<<endl;
         return false;
     }
-    for (int i=0; i<size ; i++) {
+    for (int i=0; i<products.size() ; i++) {
         if (products[i].getProductID() == productID) {
             quantities[i] = newQuantity;
             cout<<"Stock updates successfully"<<endl;
