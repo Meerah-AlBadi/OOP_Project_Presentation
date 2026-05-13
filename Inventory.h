@@ -3,6 +3,7 @@
 #define INVENTORY_H
 
 #include "Product.h"
+#include <vector>
 class Inventory {
 private:
     vector<Product> products; //stores all products in inventory
