@@ -73,13 +73,12 @@ bool Inventory::updateStock(int productID, int newQuantity) {
 
 // Remove a product
 bool Inventory::removeProduct(int productID) {
-    for (int i=0; i<size ; i++) {
+    for (int i=0; i<products.size() ; i++) {
         if (products[i].getProductID()== productID) {
-            for (int j=i;j<size-1 ; j++) {
+            for (int j=i;j<products.size()-1 ; j++) {
                 products[j]= products[j+1];
                 quantities[j]=quantities[j+1];
             }
-            size--;
             cout<<"product removed successfully"<<endl;
             return true;
         }
