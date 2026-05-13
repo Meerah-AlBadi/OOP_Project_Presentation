@@ -18,26 +18,27 @@ void Inventory::add_product(Product prdct, int qty) { //function to add product/
         products.push_back(prdct); 
         quantities.push_back(qty);
     }
-void Inventory::reduce_stock(int id,int amount) { //function to reduce product after stock purchase
+void Inventory::reduce_stock(int id, int amount) { // function to reduce product after stock purchase
     if (amount <= 0) {
-        cout<<"Invalid purchase amount"<<endl; //exception handling for purchase amount
+        cout << "Invalid purchase amount" << endl;
         return;
     }
-    for (size_t i = 0;i < products.size(); i++) {
-        if (products[i].getProductID() == id) {
-            if (quantities[i] >= amount){
-                quantities[i] -= amount;
 
-                if (quantities[i] == 0){
-                    cout<<"Product is out of stock"<<endl;
+    for (size_t i = 0; i < products.size(); i++) {
+        if (products[i].getProductID() == id) {
+            if (quantities[i] >= amount) {
+                quantities[i] -= amount;
+                if (quantities[i] == 0) {
+                    cout << "Product is out of stock" << endl;
+                }
             }
-            else{
-                cout<<"Not enough stock"<<endl;
+            else {
+                cout << "Not enough stock" << endl;
             }
             return;
         }
     }
-    cout<<"Product is not found"; //if there is not matching prdct
+    cout << "Product is not found" << endl; //no matching product
 }
 void Inventory::display_inventory() { //function to display all stored products and quantites
     cout << endl;
