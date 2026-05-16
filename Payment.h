@@ -1,15 +1,15 @@
 #ifndef PAYMENT_H
 #define PAYMENT_H
-#include <iostream>
-using namespace std;
-class Payment{
-private:
-int idPayment;
-string methodPayment;
+
+class Payment {
+protected:
 double amount;
+bool paid;
 public:
-Payment();
-Payment(int id, string method, double a);
-void displayPayment();
+    Payment(double amount);
+virtual bool processPayment() = 0;
+virtual void displayPaymentMethod() const = 0;
+bool isPaid() const;
+virtual ~Payment() {}
 };
 #endif
