@@ -1,22 +1,32 @@
-#include<iostream>
-#include<string>
-#include"User.h"
-using namespace std;
-User::User() {  //initialized constructor
-    id =0;
-    name="";
+#include "User.h"
+
+// Default constructor
+User::User() {
+    id = "";
+    name = "";
+    password = "";
 }
-User::User (int i, string n) { //parameterized  constructor
-    id = i;
-    name = n;
+
+// Parameterized constructor
+User::User(string name, string password)
+    : name(name), password(password) {
 }
-int User::getID() { // return user id
+
+// Getter for ID
+string User::getId() const {
     return id;
 }
-string User::getName() {  // return user name
+
+// Getter for name
+string User::getName() const {
     return name;
 }
-void User::displayUser() {  // display user info
-    cout<<"id = "<<id<<endl;
-    cout<<"name = "<<name<<endl;
+
+// Login function
+bool User::login(string enteredId, string enteredPassword) const {
+    return id == enteredId && password == enteredPassword;
+}
+
+// Destructor
+User::~User() {
 }
