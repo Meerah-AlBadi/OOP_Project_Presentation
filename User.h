@@ -1,18 +1,35 @@
-// Class User
-#ifndef USER_h
-#define USER_h               
-#include<string>
+#ifndef USER_H
+#define USER_H
+
+#include <iostream>
+#include <string>
 using namespace std;
 
 class User {
 protected:
-    int id;        // user id
-    string name;  //user name
+    string id;
+    string name;
+    string password;
+
 public:
-    User() ;// initialized  constructor
-    User(int i, string n) ; //parameterized  constructor
-    int getID() ;// return user id
-    string getName() ; // return user name
-    void displayUser() ; // display user info
+    // Default constructor
+    User();
+
+    // Parameterized constructor
+    User(string name, string password);
+
+    // Getter functions
+    string getId() const;
+    string getName() const;
+
+    // Login function
+    bool login(string enteredId, string enteredPassword) const;
+
+    // Pure virtual function
+    virtual void showMenu() = 0;
+
+    // Virtual destructor
+    virtual ~User();
 };
+
 #endif
