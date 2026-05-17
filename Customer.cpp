@@ -1,5 +1,10 @@
 #include "Customer.h"
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+
 // Initialize static variable
 int Customer::customerCounter = 1;
 
