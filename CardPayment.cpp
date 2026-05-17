@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Card.h"
+#include "CardPayment.h"
 using namespace std;
 class CardPayment : public Payment {
 private:
