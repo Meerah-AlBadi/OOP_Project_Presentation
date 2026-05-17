@@ -1,3 +1,5 @@
+// Class InventoryItem - Added later to improve logic (instead of storing only product this class help us stor product+quantity)
+
 #include "InventoryItem.h"
 
 #include <iostream>
