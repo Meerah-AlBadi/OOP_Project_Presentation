@@ -1,8 +1,9 @@
+#include "Product.h"
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <iomanip>
-#include "Product.h"
+using namespace std;
 
 // Initialize static variable
 int Product::ProductCounter = 1;
