@@ -1,21 +1,35 @@
 #ifndef ORDER_H
 #define ORDER_H
 #include <iostream>
-#include "customer.h"
-#include "product.h"
-#include "Payment.h"
-using namespace std;
+#include<vector>
+#include<string>
+#include<sstream>
+#include<iomanip>
+#include"OrderItem.h"
+#include"Product.h"
+#include"Payment.h"
+#include<"Inventory.h"
 
-class Order {
-int OrderID;
-Customer* customer;
-Product* product;
-Payment payment;
-int quantity;
-double total;
+using namespace std;
+class Order{
+private:
+static int orderCounter;
+string orderID;
+vector<OrderItem> orderItems;
+Payment* payment;
+
 public:
-Order();   // Initializer Constructor
-Order(int id, Customer* c, Product* p, int quan, Payment pay, double t);    //Parameterized Counstructor
-void displayOrder();    // Print Order details
+Order();
+string getOrderID() const;
+void addItem(Product product, int quantity);
+double calculateTotal() const;
+bool isEmpty() const;
+
+void returnItemsToInventory(Inventory& inventory) const;
+void setPayment(Payment*p);
+bool pay();
+void displayOrder() const;
+~Order();
 };
-#endif
+
+#endif  
