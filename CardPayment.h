@@ -7,7 +7,7 @@ using namespace std;
 
 class Payment{
 protected:
-double amont;
+double amount;
 bool paid;
 public:
 Payment(double amount): amount(amount),paid(false){}
