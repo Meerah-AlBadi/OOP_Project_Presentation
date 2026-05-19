@@ -7,7 +7,7 @@ using namespace std;
 
 
 class OrderItem {
-    product product;       // Composition (OrderItem HAS-A Product )
+    Product product;       // Composition (OrderItem HAS-A Product )
     int quantity;
 public:
     OrderItem(Product pr, int quan);     //Constructor (Takes a product object + quantity )
