@@ -1,8 +1,8 @@
 #ifndef INVENTORYITEM_H
 #define INVENTORYITEM_H
 
-#include "Product.h";
-#include <string>;
+#include "Product.h"
+#include <string>
 using namespace std;
 
 class InventoryItem {
