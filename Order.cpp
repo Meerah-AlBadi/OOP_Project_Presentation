@@ -51,4 +51,28 @@ void Order::displayOrder() const{
     cout<<"Order is empty.\n";
     return;
   }
-  cout<<
+  cout<<left<<setw(10)<<"ID"
+      <<setw(25)<<"Product Name"
+      <<setw(20)<<"Company"
+      <<setw(10)<<"Price"
+      <<setw(10)<<Qty"
+      <<setw(10)<<"Subtotal"<<endl;
+cout<<"----------------------------\n";
+
+for(const OrderItem& item: orderItems){
+  item.display();
+}
+cout<<"Total: "<<fixed<< setprecision(2)
+    <<calculateTotal()<<"OMR\n";
+
+cout<<"Payment: ";
+if(payment!=nullptr){
+  payment->displayPaymentMethod();
+  cout<<endl;
+}
+else{ cout<<"Not selected\n";}
+}
+
+Order::~Order(){
+    delete payment;
+}
