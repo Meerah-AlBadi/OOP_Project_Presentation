@@ -1,23 +1,54 @@
-#include <iostream>
 #include "Order.h"
-using namespace std;
-Order:: Order() {
-OrderID =0;
-customer = nullptr;
-product = nullptr;
-quantity =0;
-total =0;
+int Order::orderCounter=1;
+Order::Order(){
+stringstream ss;
+ss<<"O"<<orderCounter++;
+orderID=ss.str();
+payment=nullptr;
 }
 
-Order:: Order(int id, Customer* c, Product* p, int quan, Payment pay, double t): OrderID(id), customer(c), product(p), quantity(quan),payment(pay), total(t) {}
-
-void Order:: displayOrder() {
-  cout << endl;
-  cout << "==== Order details ====" << endl;
-  cout << "Order ID: "<< OrderID << endl;
-  cout << "Customer Name: " << customer ->getName() << endl;
-  cout << "Product Name: " << product -> getProductName() << endl;
-  cout << "Quantity of bought product : " << quantity << endl;
-  cout << "Total " << total << " OMR "<<endl;
-  payment.displayPayment(); //Prints Payment Details of the order
+string Order::getOrderID() const{
+  return orderID;
 }
+void Order::addItem(Product product, int quantity){
+  orderItems.push_back(OrderItem(product,quantity));
+}
+double Order::calculateTotal() const{
+  double total=0;
+  for( const OrderItem& item: orderItems){
+    total+=item.getSubtotal();
+  }
+  return total;
+}
+
+bool Order::isEmpty() const{
+  return orderItems.empty();
+}
+void Order::returnItemsToInventory(Inventory& inventory) const{
+  for (const OrderItems& item: orderItems){
+    inventory.increaseStock(item.getProductID(),item.getQuantity());
+  }
+}
+
+void Order::setPayment(Payment*p){
+  if(payment!=nullptr){
+    delete payment;
+  }
+  payment=p;
+}
+
+bool Order::pay(){
+  if (payment==nullptr){
+    cout<<"No payment method selected.\n";
+    return false;
+  }
+  return payment->processPayment();
+}
+
+void Order::displayOrder() const{
+  cout<<"\n============ORDER"<<orderID<<"=============\n";
+  if (orderItems.empty()){
+    cout<<"Order is empty.\n";
+    return;
+  }
+  cout<<
