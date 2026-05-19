@@ -10,13 +10,13 @@ public:
 
     bool processPayment() override {
         if (cardNumber.length() < 4) {
-            cout << "Invalid card number.\n";
-            paid = false;
-            return false;
+        cout << "Invalid card number.\n";
+        paid = false;
+        return false;
         }
-        cout << "Card payment of " << fixed << setprecision(2) << amount << " OMR completed.\n";
-        paid = true;
-        return true;
+    cout << "Card payment of " << fixed << setprecision(2) << amount << " OMR completed.\n";
+    paid = true;
+    return true;
     }
 
     void displayPaymentMethod() const override {
