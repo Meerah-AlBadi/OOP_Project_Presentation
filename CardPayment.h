@@ -3,6 +3,7 @@
 #include <iostream>
 #include<iomanip>
 #include <string>
+#include "Payment.h"
 using namespace std;
 
 class CardPayment : public Payment {
