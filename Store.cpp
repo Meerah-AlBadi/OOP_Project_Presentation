@@ -147,7 +147,7 @@ void Store::adminSignIn() {
         return;
     }
 
-    cout << "Welcome, " << admin->getName() << "!" <<endl;
+    cout << "Welcome, " << admin->getName() << "<3" <<endl;
     adminMenu(admin);
 }
 
@@ -169,7 +169,7 @@ void Store::customerSignIn() {
         return;
     }
 
-    cout << "Welcome, " << customer->getName() << "! " <<endl;
+    cout << "Welcome, " << customer->getName() << "<3 " <<endl;
     adminMenu(customer);
 }
 
