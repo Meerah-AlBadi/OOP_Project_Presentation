@@ -83,9 +83,10 @@ void Store::run() {
             case 4:
                 customerSignIn();
                 break;
-            default:
-                cout << "Invalid Choice! Please Try Again" << endl;
         }
+            case 0:
+                cout << "Exiting system...\n";
+                break;
     }
 
 }
@@ -200,8 +201,6 @@ void Store::adminMenu(Admin* admin) {
             case 0:
                 cout << "Admin logged out " << endl;
                 break;
-            default:
-                cout << "Invalid choice! Please Try Again" << endl;
 
         }
     }
@@ -230,8 +229,6 @@ void Store::customerMenu(Customer* customer) {
             case 0:
                 cout << "Customer logged out " << endl;
                 break;
-            default:
-                cout << "Invalid choice! Please Try Again" << endl;
 
         }
     }
