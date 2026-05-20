@@ -170,7 +170,7 @@ void Store::customerSignIn() {
     }
 
     cout << "Welcome, " << customer->getName() << "<3 " <<endl;
-    adminMenu(customer);
+    customerMenu(customer);
 }
 
 void Store::adminMenu(Admin* admin) {
