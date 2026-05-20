@@ -56,9 +56,7 @@ Store::Store() {
 void Store::run() {
     int option;
 
-    option = 1;
-
-    while(option !=0) {
+    do {
 
         cout << endl;
         cout << "========== GAMING STORE MANAGEMENT SYSTEM ==========" << endl;
@@ -87,7 +85,8 @@ void Store::run() {
                 cout << "Exiting system...\n";
                 break;
         }
-    }
+        
+    } while(option !=0)
 
 }
 
@@ -176,8 +175,8 @@ void Store::customerSignIn() {
 void Store::adminMenu(Admin* admin) {
 
     int option;
-    option = 1;
-    while (option!=0) {
+    
+    do {
 
         admin ->showMenu();
         option = readChoice();
@@ -203,15 +202,15 @@ void Store::adminMenu(Admin* admin) {
                 break;
 
         }
-    }
+    } while (option!=0)
 }
 
 
 void Store::customerMenu(Customer* customer) {
 
     int option;
-    option = 1;
-    while (option!=0) {
+    
+    do {
 
         customer ->showMenu();
         option = readChoice();
@@ -231,5 +230,5 @@ void Store::customerMenu(Customer* customer) {
                 break;
 
         }
-    }
+    } while (option!=0)
 }
