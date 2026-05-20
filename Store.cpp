@@ -83,10 +83,10 @@ void Store::run() {
             case 4:
                 customerSignIn();
                 break;
-        }
             case 0:
                 cout << "Exiting system...\n";
                 break;
+        }
     }
 
 }
